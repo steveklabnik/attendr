@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  ticket: MyString
+  ticket_name: MyString
+  ticket_email: MyString
+  event: MyString
+  void: MyString
+  status: MyString
+  price: 1
+  ticket_reference: MyString
+  tags: MyString
+  unique_ticket_url: MyString
+  unique_order_url: MyString
+  order_reference: MyString
+  order_name: MyString
+  order_email: MyString
+  order_ip: MyString
+  order_date: 2013-04-29 16:20:04
+  attended: false
+
+two:
+  number: 1
+  ticket: MyString
+  ticket_name: MyString
+  ticket_email: MyString
+  event: MyString
+  void: MyString
+  status: MyString
+  price: 1
+  ticket_reference: MyString
+  tags: MyString
+  unique_ticket_url: MyString
+  unique_order_url: MyString
+  order_reference: MyString
+  order_name: MyString
+  order_email: MyString
+  order_ip: MyString
+  order_date: 2013-04-29 16:20:04
+  attended: false

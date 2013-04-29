@@ -1,0 +1,61 @@
+<h1>Listing attendees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Ticket</th>
+      <th>Ticket name</th>
+      <th>Ticket email</th>
+      <th>Event</th>
+      <th>Void</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Ticket reference</th>
+      <th>Tags</th>
+      <th>Unique ticket url</th>
+      <th>Unique order url</th>
+      <th>Order reference</th>
+      <th>Order name</th>
+      <th>Order email</th>
+      <th>Order ip</th>
+      <th>Order date</th>
+      <th>Attended</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendees.each do |attendee| %>
+      <tr>
+        <td><%= attendee.number %></td>
+        <td><%= attendee.ticket %></td>
+        <td><%= attendee.ticket_name %></td>
+        <td><%= attendee.ticket_email %></td>
+        <td><%= attendee.event %></td>
+        <td><%= attendee.void %></td>
+        <td><%= attendee.status %></td>
+        <td><%= attendee.price %></td>
+        <td><%= attendee.ticket_reference %></td>
+        <td><%= attendee.tags %></td>
+        <td><%= attendee.unique_ticket_url %></td>
+        <td><%= attendee.unique_order_url %></td>
+        <td><%= attendee.order_reference %></td>
+        <td><%= attendee.order_name %></td>
+        <td><%= attendee.order_email %></td>
+        <td><%= attendee.order_ip %></td>
+        <td><%= attendee.order_date %></td>
+        <td><%= attendee.attended %></td>
+        <td><%= link_to 'Show', attendee %></td>
+        <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
+        <td><%= link_to 'Destroy', attendee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attendee', new_attendee_path %>
