@@ -1,0 +1,12 @@
+<p>Using Attendr is super easy. Just use the form below to make an event, and
+I'll explain more then.</p>
+
+<h2>Make a new Event</h2>
+
+<%= form_for @event do |f| %>
+  <%= f.label "I need a name for this event:" %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Give me a CSV:" %>
+  <%= f.file_field :csv %><br>
+  <%= f.submit %>
+<% end %>
