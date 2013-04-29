@@ -6,14 +6,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    csv = params[:event][:csv]
-    csv = CSV.parse(csv.tempfile, :headers => true, :header_converters => :symbol)
-
-    @event = Event.create(:name => params[:event][:name])
-
-    csv.each do |row|
-      Attendee.create!(row.to_hash.merge({:event_id => @event.id}))
-    end
+    @event = Event.from_csv(params[:event][:csv].tempfile, params[:event][:name])
 
     redirect_to @event, :notice => "Event created!"
   end
