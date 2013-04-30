@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.where(slug: params[:id]).first
 
     respond_to do |format|
       format.html

@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   has_many :attendees
 
+  before_create :generate_slug
+
   def self.from_csv(file, name)
     csv = CSV.parse(file, headers: true, header_converters:  :symbol)
 
@@ -25,5 +27,13 @@ class Event < ActiveRecord::Base
         csv << headers.collect {|col| attendee.send(col) }
       end
     end
+  end
+
+  def to_param
+    slug
+  end
+
+  def generate_slug
+    self.slug = SecureRandom.uuid
   end
 end
