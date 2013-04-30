@@ -4,11 +4,9 @@ class Event < ActiveRecord::Base
   before_create :generate_slug
 
   def self.from_csv(file, name)
-    csv = CSV.open(file, headers: true, header_converters: :symbol, encoding: Encoding::UTF_8)
-
     event = Event.create(name: name)
 
-    csv.each do |row|
+    CSV.foreach(file, headers: true, header_converters: :symbol, encoding: Encoding::UTF_8) do |row|
       Attendee.create!(row.to_hash.merge({event_id: event.id}))
     end
 
