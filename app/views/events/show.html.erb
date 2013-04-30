@@ -2,8 +2,12 @@
   <tr><th>Name</th><th>Attended?</th></tr>
   <% @event.attendees.each do |attendee| %>
     <tr>
-      <td><%= attendee.ticket_name %></td>
-      <td><input type="submit" value="Attended"></td>
+      <%= form_for attendee do |f| %>
+        <%= f.hidden_field :id, :value => attendee.id %>
+        <%= f.hidden_field :attended, :value => true %>
+        <td><%= attendee.ticket_name %></td>
+        <td><%= f.submit "Attended" %> </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
