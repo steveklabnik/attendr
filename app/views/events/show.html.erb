@@ -1,4 +1,6 @@
 <p>Please check off each person as they arrive.</p>
+
+<p>Current attendee count: <%= Attendee.checked_in_total %></p>
 <table>
   <tr><th>Name</th><th>Attended</th><th>Didn't</th></tr>
   <% @event.attendees.each do |attendee| %>
