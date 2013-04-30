@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.from_csv(params[:event][:csv].tempfile, params[:event][:name])
 
-    redirect_to @event, :notice => "Event created!"
+    redirect_to @event, notice:  "Event created!"
   end
 
   def show
@@ -19,8 +19,8 @@ class EventsController < ApplicationController
       format.csv do
         send_data(
           @event.to_csv, 
-          :type => 'text/csv',
-          :filename => @event.filename
+          type: 'text/csv',
+          filename: @event.filename
         )
       end
     end

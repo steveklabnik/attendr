@@ -3,7 +3,7 @@
   <% @event.attendees.each do |attendee| %>
     <tr>
       <%= form_for attendee do |f| %>
-        <%= f.hidden_field :id, :value => attendee.id %>
+        <%= f.hidden_field :id, value: attendee.id %>
         <td><%= attendee.ticket_name %></td>
         <% attendance_fields_for(f, attendee) %>
       <% end %>
@@ -11,4 +11,4 @@
   <% end %>
 </table>
 
-<%= link_to "Export this data", event_path(@event, :format => :csv) %>
+<%= link_to "Export this data", event_path(@event, format: :csv) %>

@@ -2,12 +2,12 @@ class Event < ActiveRecord::Base
   has_many :attendees
 
   def self.from_csv(file, name)
-    csv = CSV.parse(file, :headers => true, :header_converters => :symbol)
+    csv = CSV.parse(file, headers: true, header_converters:  :symbol)
 
-    @event = Event.create(:name => name)
+    @event = Event.create(name: name)
 
     csv.each do |row|
-      Attendee.create!(row.to_hash.merge({:event_id => @event.id}))
+      Attendee.create!(row.to_hash.merge({event_id: @event.id}))
     end
   end
 
