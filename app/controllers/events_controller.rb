@@ -10,4 +10,8 @@ class EventsController < ApplicationController
 
     redirect_to @event, :notice => "Event created!"
   end
+
+  def show
+    @event = Event.find(params[:id])
+  end
 end

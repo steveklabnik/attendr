@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  has_many :attendees
+
   def self.from_csv(file, name)
     csv = CSV.parse(file, :headers => true, :header_converters => :symbol)
 
