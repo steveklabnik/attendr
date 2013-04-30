@@ -1,12 +1,11 @@
 <table>
-  <tr><th>Name</th><th>Attended?</th></tr>
+  <tr><th>Name</th><th>Attended</th><th>Didn't</th></tr>
   <% @event.attendees.each do |attendee| %>
     <tr>
       <%= form_for attendee do |f| %>
         <%= f.hidden_field :id, :value => attendee.id %>
-        <%= f.hidden_field :attended, :value => true %>
         <td><%= attendee.ticket_name %></td>
-        <td><%= f.submit "Attended" %> </td>
+        <% attendance_fields_for(f, attendee) %>
       <% end %>
     </tr>
   <% end %>
