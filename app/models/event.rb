@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   before_create :generate_slug
 
   def self.from_csv(file, name)
-    csv = CSV.parse(file, headers: true, header_converters:  :symbol)
+    csv = CSV.open(file, headers: true, header_converters: :symbol, encoding: Encoding::UTF_8)
 
     @event = Event.create(name: name)
 
