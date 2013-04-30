@@ -1,14 +1,118 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Attendr</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <h1>Attendr</h1>
-<%= yield %>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-</body>
+    <title>Attendr</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <link href="/webfonts/ss-social.css" rel="stylesheet" />
+    <link href="/webfonts/ss-standard.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="//use.typekit.net/tpn0qjo.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <link rel="shortcut icon" href="<%= image_path("favicon.png") %>" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="header">
+        <div id="logo">
+          <a href="/"><%= image_tag "logo-bw.png", alt: "Jumpstart Lab" %></a>
+        </div>
+        <ul id="nav">
+          <li><a href="/news">News</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="http://tutorials.jumpstartlab.com">Tutorials</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="main">
+      <div class="wrapper">
+      <h1>Attendr</h1>
+      <%= yield %>
+      </div>
+      <div id="bottom">
+        <div class="wrapper">
+          <div class="contact">
+            <h2>Contact Us</h2>
+            <dl class="contact-info">
+
+              <dt>Twitter</dt>
+              <dd><a href='http://twitter.com/jumpstartlab'>@jumpstartlab</a></dd>
+
+              <dt>Github</dt>
+              <dd><a href='https://github.com/jumpstartlab'>jumpstartlab</a></dd>
+
+              <dt>Email</dt>
+              <dd><a href='mailto:contact@jumpstartlab.com'>contact@jumpstartlab.com</a></dd>
+
+              <dt>Phone</dt>
+              <dd>(202) 670-2852</dd>
+
+              <dt>Fax</dt>
+              <dd>(202) 280–1257</dd>
+
+              <dt>Mail</dt>
+              <dd>1062 Delaware Street<br/>Denver, CO 80204 U.S.A (<a href='http://goo.gl/maps/tJZCF'Map />Map</a>)</dd>
+
+            </dl>
+          </div>
+          <%= image_tag "logo-mark.png", class: "logo-mark" %>
+          <div class="connect">
+            <h2>Stay Connected</h2>
+            <p>Get the scoop on upcoming classes.</p>
+
+            <form action="http://jumpstartlab.us1.list-manage1.com/subscribe/post?u=8080b7a05247f0dee13a0a26f&amp;id=de28a7f5d2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+              <div class="mc-field-group">
+                <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" title="Your Email Address" placeholder="Your email address">
+                <input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" />
+              </div>
+              <div id="mce-responses">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+            </form>
+
+
+            <ul>
+              <li class="twitter">
+              <a href="http://twitter.com/jumpstartlab" class="ss-icon ss-social">Twitter</a>
+              </li>
+              <li class="github">
+              <a href="https://github.com/jumpstartlab" class="ss-icon ss-social">GitHubOctocat</a>
+              </li>
+              <li class="rss"><a href="#" class="ss-icon ss-social">RSS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trailing div here is matched against all the forms including the footer -->
+    </div>
+
+    <div id="footer">
+      <div class="wrapper">
+        <ul class="footer-nav">
+          <li><a href="/news">News</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="http://tutorials.jumpstartlab.com">Tutorials</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <p>Content © Casimir Creative, LLC except where licensed otherwise.</p>
+      </div>
+    </div>
+  </body>
 </html>
+
