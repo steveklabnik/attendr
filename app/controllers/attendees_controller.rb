@@ -4,7 +4,6 @@ class AttendeesController < ApplicationController
     @attendee.attended = params[:attendee][:attended]
     @attendee.save
 
-    # this has to be event_id because Attendees have an :event attribute.
-    redirect_to event_path(@attendee.event_id)
+    redirect_to event_path(@attendee.event_slug)
   end
 end

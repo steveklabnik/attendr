@@ -10,4 +10,8 @@ class Attendee < ActiveRecord::Base
 
     "#{checked_in} / #{count}"
   end
+
+  def event_slug
+    Event.find(event_id).slug
+  end
 end
