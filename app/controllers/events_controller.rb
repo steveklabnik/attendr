@@ -13,5 +13,16 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(
+          @event.to_csv, 
+          :type => 'text/csv',
+          :filename => @event.filename
+        )
+      end
+    end
   end
 end

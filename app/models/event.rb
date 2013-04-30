@@ -10,4 +10,20 @@ class Event < ActiveRecord::Base
       Attendee.create!(row.to_hash.merge({:event_id => @event.id}))
     end
   end
+
+  def filename
+    "#{name.gsub(/\W/, "-").downcase}-export-#{Time.now.to_i}.csv"
+  end
+
+  def to_csv
+    headers = Attendee.attribute_names
+
+    CSV.generate do |csv|
+      csv << headers
+
+      Attendee.all.each do |attendee|
+        csv << headers.collect {|col| attendee.send(col) }
+      end
+    end
+  end
 end

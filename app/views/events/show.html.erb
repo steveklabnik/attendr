@@ -10,4 +10,5 @@
     </tr>
   <% end %>
 </table>
-<input type="submit" value="done">
+
+<%= link_to "Export this data", event_path(@event, :format => :csv) %>
