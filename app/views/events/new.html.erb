@@ -3,10 +3,18 @@ I'll explain more then.</p>
 
 <h2>Make a new Event</h2>
 
+<table>
 <%= form_for @event do |f| %>
-  <%= f.label "I need a name for this event:" %>
-  <%= f.text_field :name %><br>
-  <%= f.label "Give me a CSV:" %>
-  <%= f.file_field :csv %><br>
-  <%= f.submit %>
+  <tr>
+    <td><%= f.label "I need a name for this event:" %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Give me a CSV:" %></td>
+    <td><%= f.file_field :csv %></td>
+  </tr>
+  <tr>
+    <td></td><td><%= f.submit %></td>
+  </tr>
 <% end %>
+</table>
